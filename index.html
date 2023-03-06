@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+</head>
+
+<body>
+  <section class="filters sw-flex">
+    <div class="filters sw-flex">
+      <input type="text" id="searchInput" placeholder="Search..." />
+      <select id="name-sort">
+        <option value="">Seleccione una opción</option>
+        <option value="asc">Ascendente</option>
+        <option value="desc">Descendente</option>
+      </select>
+      <button id="themeBtn" class="button-theme">☀️</button>
+    </div>
+    <div class="filters sw-flex">
+      <button id="jediBtn" class="button">Jedi Order</button>
+      <button id="rebelBtn" class="button">Rebel Alliance</button>
+      <button id="empireBtn" class="button">Galactic Empire</button>
+      <button id="republicBtn" class="button">Galactic Republic</button>
+      <button id="allBtn" class="button">Show All</button>
+    </div>
+  </section>
+  <div id="app"></div>
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
