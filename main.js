@@ -8,7 +8,7 @@ const affiliationsFull = [
   "Rebel Alliance",
   "Galactic Empire",
   "Galactic Republic",
-  "Mandalorian"
+  "Mandalorian",
 ];
 const buttons = document.querySelectorAll(".button-theme");
 
@@ -172,3 +172,16 @@ const setTheme = (theme) => {
     document.body.classList.toggle("light");
   }
 };
+
+if (
+  window.matchMedia &&
+  window.matchMedia("(prefers-color-scheme: dark)").matches
+) {
+  // El usuario está usando el modo oscuro
+  console.log("El usuario está usando el modo oscuro");
+  setTheme("dark");
+} else {
+  // El usuario está usando el modo claro
+  console.log("El usuario está usando el modo claro");
+  setTheme("light");
+}
