@@ -75,6 +75,7 @@ const jediBtn = document.querySelector("#jediBtn");
 const rebelBtn = document.querySelector("#rebelBtn");
 const empireBtn = document.querySelector("#empireBtn");
 const republicBtn = document.querySelector("#republicBtn");
+const mandalorianBtn = document.querySelector("#mandalorianBtn");
 const allBtn = document.querySelector("#allBtn");
 
 //Le vamos a añadir un evento click a cada uno que lance la función filterAffiliation y la pase characters y el valor que queremos que filtre por afiliación
@@ -82,7 +83,7 @@ const allBtn = document.querySelector("#allBtn");
 const Capo = (btn, aff) => {
   btn.addEventListener("click", () => {
     btn.classList.toggle("pressed");
-    if (jediBtn.classList.contains("pressed")) {
+    if (btn.classList.contains("pressed")) {
       affiliations.push(aff);
     } else {
       const index = affiliations.indexOf(aff);
@@ -95,58 +96,10 @@ const Capo = (btn, aff) => {
 };
 
 Capo(jediBtn, "Jedi Order");
-
-rebelBtn.addEventListener("click", () => {
-  rebelBtn.classList.toggle("pressed");
-  if (rebelBtn.classList.contains("pressed")) {
-    affiliations.push("Rebel Alliance");
-  } else {
-    const index = affiliations.indexOf("Rebel Alliance");
-    affiliations.splice(index, 1);
-  }
-  if (!allBtn.classList.contains("pressed")) {
-    filterAffiliation(characters, affiliations);
-  }
-});
-
-empireBtn.addEventListener("click", () => {
-  empireBtn.classList.toggle("pressed");
-  if (empireBtn.classList.contains("pressed")) {
-    affiliations.push("Galactic Empire");
-  } else {
-    const index = affiliations.indexOf("Galactic Empire");
-    affiliations.splice(index, 1);
-  }
-  if (!allBtn.classList.contains("pressed")) {
-    filterAffiliation(characters, affiliations);
-  }
-});
-
-republicBtn.addEventListener("click", () => {
-  republicBtn.classList.toggle("pressed");
-  if (republicBtn.classList.contains("pressed")) {
-    affiliations.push("Galactic Republic");
-  } else {
-    const index = affiliations.indexOf("Galactic Republic");
-    affiliations.splice(index, 1);
-  }
-  if (!allBtn.classList.contains("pressed")) {
-    filterAffiliation(characters, affiliations);
-  }
-});
-
-mandalorianBtn.addEventListener("click", () => {
-  mandalorianBtn.classList.toggle("pressed");
-  if (mandalorianBtn.classList.contains("pressed")) {
-    affiliations.push("Mandalorian");
-  } else {
-    const index = affiliations.indexOf("Mandalorian");
-    affiliations.splice(index, 1);
-  }
-  if (!allBtn.classList.contains("pressed")) {
-    filterAffiliation(characters, affiliations);
-  }
-});
+Capo(rebelBtn, "Rebel Alliance");
+Capo(empireBtn, "Galactic Empire");
+Capo(republicBtn, "Galactic Republic");
+Capo(mandalorianBtn, "Mandalorian");
 
 allBtn.addEventListener("click", () => {
   allBtn.classList.toggle("pressed");
