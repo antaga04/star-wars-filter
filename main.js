@@ -80,7 +80,7 @@ const allBtn = document.querySelector("#allBtn");
 
 //Le vamos a añadir un evento click a cada uno que lance la función filterAffiliation y la pase characters y el valor que queremos que filtre por afiliación
 
-const Capo = (btn, aff) => {
+const buttonEventListener = (btn, aff) => {
   btn.addEventListener("click", () => {
     btn.classList.toggle("pressed");
     if (btn.classList.contains("pressed")) {
@@ -95,11 +95,11 @@ const Capo = (btn, aff) => {
   });
 };
 
-Capo(jediBtn, "Jedi Order");
-Capo(rebelBtn, "Rebel Alliance");
-Capo(empireBtn, "Galactic Empire");
-Capo(republicBtn, "Galactic Republic");
-Capo(mandalorianBtn, "Mandalorian");
+buttonEventListener(jediBtn, "Jedi Order");
+buttonEventListener(rebelBtn, "Rebel Alliance");
+buttonEventListener(empireBtn, "Galactic Empire");
+buttonEventListener(republicBtn, "Galactic Republic");
+buttonEventListener(mandalorianBtn, "Mandalorian");
 
 allBtn.addEventListener("click", () => {
   allBtn.classList.toggle("pressed");
