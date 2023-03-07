@@ -78,6 +78,7 @@ const republicBtn = document.querySelector("#republicBtn");
 const allBtn = document.querySelector("#allBtn");
 
 //Le vamos a añadir un evento click a cada uno que lance la función filterAffiliation y la pase characters y el valor que queremos que filtre por afiliación
+
 jediBtn.addEventListener("click", () => {
   jediBtn.classList.toggle("pressed");
   if (jediBtn.classList.contains("pressed")) {
@@ -123,6 +124,19 @@ republicBtn.addEventListener("click", () => {
     affiliations.push("Galactic Republic");
   } else {
     const index = affiliations.indexOf("Galactic Republic");
+    affiliations.splice(index, 1);
+  }
+  if (!allBtn.classList.contains("pressed")) {
+    filterAffiliation(characters, affiliations);
+  }
+});
+
+mandalorianBtn.addEventListener("click", () => {
+  mandalorianBtn.classList.toggle("pressed");
+  if (mandalorianBtn.classList.contains("pressed")) {
+    affiliations.push("Mandalorian");
+  } else {
+    const index = affiliations.indexOf("Mandalorian");
     affiliations.splice(index, 1);
   }
   if (!allBtn.classList.contains("pressed")) {
