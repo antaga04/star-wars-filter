@@ -79,18 +79,22 @@ const allBtn = document.querySelector("#allBtn");
 
 //Le vamos a añadir un evento click a cada uno que lance la función filterAffiliation y la pase characters y el valor que queremos que filtre por afiliación
 
-jediBtn.addEventListener("click", () => {
-  jediBtn.classList.toggle("pressed");
-  if (jediBtn.classList.contains("pressed")) {
-    affiliations.push("Jedi Order");
-  } else {
-    const index = affiliations.indexOf("Jedi Order");
-    affiliations.splice(index, 1);
-  }
-  if (!allBtn.classList.contains("pressed")) {
-    filterAffiliation(characters, affiliations);
-  }
-});
+const Capo = (btn, aff) => {
+  btn.addEventListener("click", () => {
+    btn.classList.toggle("pressed");
+    if (jediBtn.classList.contains("pressed")) {
+      affiliations.push(aff);
+    } else {
+      const index = affiliations.indexOf(aff);
+      affiliations.splice(index, 1);
+    }
+    if (!allBtn.classList.contains("pressed")) {
+      filterAffiliation(characters, affiliations);
+    }
+  });
+};
+
+Capo(jediBtn, "Jedi Order");
 
 rebelBtn.addEventListener("click", () => {
   rebelBtn.classList.toggle("pressed");
