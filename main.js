@@ -53,6 +53,32 @@ searchInput.addEventListener("input", (ev) =>
   filterCharacters(characters, ev.target.value)
 );
 
+//Función que ordene alfabéticamente según un select
+const sortedCharacter = characters;
+sortedCharacter.sort(function (a, b) {
+  return a.name - b.name;
+});
+
+const personas = [
+  { nombre: "Juan", edad: 25 },
+  { nombre: "Ana", edad: 32 },
+  { nombre: "María", edad: 19 },
+];
+
+function sortCharacters(characters, order) {
+  return order === "desc"
+    ? characters.sort((a, b) => b.name.localeCompare(a.name))
+    : characters.sort((a, b) => a.name.localeCompare(b.name));
+}
+
+//Anñadimos un evento
+const selectOption = document.querySelector("#name-sort");
+selectOption.addEventListener("change", (ev) => {
+  const sortedCharacters = sortCharacters(characters, ev.target.value);
+  // console.log(sortedCharacters);
+  printCharacters(sortedCharacters);
+});
+
 //---------------------------------------------------//
 //Vamos a definir filtros por el affiliation de cada uno de los personajes
 //Jedi Order
@@ -156,3 +182,18 @@ if (
   console.log("El usuario está usando el modo claro");
   setTheme("light");
 }
+
+// const sortCharacter = (option) => {
+//   let newcharacters = [characters[0]];
+//   for (let i = 1; i < characters.length; i++) {
+//     let index = 0;
+//     for (char of newcharacters) {
+//       if (characters[i].name > char.name) {
+//         index++;
+//       }
+//     }
+//     index === newcharacters.length - 1
+//       ? newcharacters.push(characters[i])
+//       : newcharacters.splice
+//   }
+// };
