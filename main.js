@@ -74,9 +74,10 @@ function sortCharacters(characters, order) {
 //Anñadimos un evento
 const selectOption = document.querySelector("#name-sort");
 selectOption.addEventListener("change", (ev) => {
+  console.log(ev.target.value)
   const sortedCharacters = sortCharacters(characters, ev.target.value);
   // console.log(sortedCharacters);
-  printCharacters(sortedCharacters);
+  ev.target.value != "asc" || ev.target.value != "desc" ? printCharacters(characters) : printCharacters(sortedCharacters);
 });
 
 //---------------------------------------------------//
