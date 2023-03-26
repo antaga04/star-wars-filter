@@ -183,7 +183,7 @@ if (
   console.log("El usuario está usando el modo claro");
   setTheme("light");
 }
-
+// Código inválido
 // const sortCharacter = (option) => {
 //   let newcharacters = [characters[0]];
 //   for (let i = 1; i < characters.length; i++) {
