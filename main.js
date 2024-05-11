@@ -1,6 +1,5 @@
-import "./style.css";
 //Nos importamos el array de personajes del archivo data.js
-import { characters } from "./data";
+import { characters } from "./data.js";
 
 const affiliations = [];
 const affiliationsFull = [
